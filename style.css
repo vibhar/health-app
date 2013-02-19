@@ -8,7 +8,7 @@ body {
 .transbox {
 	background-color: #805A65;
 	border:3px solid black;
-	position: absolute; 
+	position: absolute;
 	top:14%;
 	bottom:3%;
 	left:3%;
@@ -16,10 +16,9 @@ body {
 }
 
 .sidebar {
-	/*background-color: #9D7A7E;*/
 	background-color: #805A65;
 	color: #31262A;
-	float:left;
+	left: 5%;
 	text-align: center;
  	width: 25%;
  	border: 3px solid #31262A;
@@ -28,28 +27,34 @@ body {
 li {
 	border: 3px solid #31262A;
 	vertical-align: center;
-	padding-top: 54px;
-	padding-bottom: 55px;
+	padding-top: 55px;
+	padding-bottom: 54px;
 }
 
 li:hover {
 	background-color: #9D7A7E;
 }
 
+#clicked {
+  background-color: #9D7A7E;
+}
+
 .data {
-	color: #91BF9B;
-	width: 70%;
-	float: right;
-	text-align: center;
-	padding-top: 20px;
+  color: #91BF9B;
+  width: 70%;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .data textarea {
- background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
- width: 600px;
- height: 300px;
- font: normal 14px verdana;
+ background: url(notebook.png) repeat-y;
+ position: fixed;
+ left: 30%;
+ width: 25%;
+ height: 70%;
+ font: normal 14px lato;
  line-height: 25px;
- padding: 2px 10px;
- border: solid 1px #ddd;
 }
