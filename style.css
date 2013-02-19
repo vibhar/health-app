@@ -1,0 +1,55 @@
+body {
+	background-color: #31262A;
+	font-style: Lato;
+	font-weight: italic;
+	font-size: 48px;
+}
+
+.transbox {
+	background-color: #805A65;
+	border:3px solid black;
+	position: absolute; 
+	top:14%;
+	bottom:3%;
+	left:3%;
+	right:3%;
+}
+
+.sidebar {
+	/*background-color: #9D7A7E;*/
+	background-color: #805A65;
+	color: #31262A;
+	float:left;
+	text-align: center;
+ 	width: 25%;
+ 	border: 3px solid #31262A;
+}
+
+li {
+	border: 3px solid #31262A;
+	vertical-align: center;
+	padding-top: 54px;
+	padding-bottom: 55px;
+}
+
+li:hover {
+	background-color: #9D7A7E;
+}
+
+.data {
+	color: #91BF9B;
+	width: 70%;
+	float: right;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.data textarea {
+ background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+ width: 600px;
+ height: 300px;
+ font: normal 14px verdana;
+ line-height: 25px;
+ padding: 2px 10px;
+ border: solid 1px #ddd;
+}
