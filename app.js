@@ -5,11 +5,11 @@ var app = express();        // create a new instance of express
 
 // imports the fs module (reading and writing to a text file)
 var fs = require("fs");
-
+var path = require("path");
 // the bodyParser middleware allows us to parse the
 // body of a request
 app.use(express.bodyParser());
-
+app.use(express.static(path.join(__dirname, 'static')));
 // The global datastore for this example
 var journal;
 
