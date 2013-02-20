@@ -1,3 +1,4 @@
+function makeGraph(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
@@ -100,4 +101,4 @@
         ctx.fillText("" + (points[i][0].getMonth() + 1) + "/" +  points[i][0].getDate(), bottomLeftGraph[0] + 5 + (i-1)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1] + 20);
 
     }
-
+}

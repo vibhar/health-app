@@ -7,15 +7,29 @@
 	<div class="transbox">
 		<div class="sidebar">
 			<ul>
-				<li>Health Journal</li>
-				<li>Exercise Plan</li>
-				<li>Daily Diet</li>
+				<li id="healthJournalButton">Health Journal</li>
+				<li id="myPlanButton">My Plan</li>
+				<li id="myProgressButton">My Progress</li>
 			<ul>
 		</div>
-		<div class="data">
+		<div class="data" id="healthJournalScreen">
 			<textarea>
 			</textarea>
+			This is where my journal will go
 		</div>
+		<div class="data" id="myPlanScreen" style="display: none">
+			My Plan will go here eventually
+		</div>
+		<div class="data" id="myProgressScreen" style="display: none">
+            <!-- All the fun graphs calendars and fun stuff will go here eventually -->
+            <canvas id="myCanvas" width="600" height="400"
+		        style="border:1px solid #000000;">
+			    No canvas available!
+			</canvas>
+        </div>
 	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/interactions.js" type="text/javascript"></script>
+<script src="js/graph.js" type="text/javascript"></script>
 </body>
 </html>
