@@ -16,7 +16,7 @@ $(document).ready(function(){
         $("#myPlanScreen").css("display", "none");
         $("#myProgressScreen").css("display", "");
 
-        makeGraph();
+        makeCalendar();
     })
 
 });

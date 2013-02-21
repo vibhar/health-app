@@ -121,8 +121,6 @@ app.delete("/listings/:id", function(request, response){
 
 
 app.get("/plan", function(request, response){
-  if (journal["plan"])
-    console.log("Holy cow");
   response.send({
     plan: journal["plan"],
     success: true
