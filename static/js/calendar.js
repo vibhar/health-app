@@ -30,10 +30,10 @@ function getMonthString(n){
 function getDaysInMonth(year, month){
     return new Date(year, month+1, 0).getDate();
 }
-function makeCalendar(){
+function makeCalendar(date){
     var calendar = $("#calendar")
 
-    var date = new Date();
+    // var date = new Date();
 
     var currMonthNum = date.getMonth();
     var currMonth = getMonthString(currMonthNum);

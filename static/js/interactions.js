@@ -16,7 +16,7 @@ $(document).ready(function(){
         $("#myPlanScreen").css("display", "none");
         $("#myProgressScreen").css("display", "");
 
-        makeCalendar();
+        makeCalendar(new Date(2012,3,1));
     })
 
 });
