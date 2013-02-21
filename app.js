@@ -118,16 +118,52 @@ app.delete("/listings/:id", function(request, response){
   });
 });
 
+
+
+app.get("/plan", function(request, response){
+  if (journal["plan"])
+    console.log("Holy cow");
+  response.send({
+    plan: journal["plan"],
+    success: true
+  });
+});
+
+app.post("/plan", function(request, response){
+  var task = "" + request.body.task;
+
+  var successful = (task !== ""); 
+
+  if (successful) {
+    journal["plan"].push(task);
+    writeFile("data.txt", JSON.stringify(journal));
+  } 
+  else {
+    task = undefined;
+  }
+
+  response.send({
+    task: task,
+    success: successful
+  });
+});
+
 // This is for serving files in the static directory
 app.get("/static/:staticFilename", function (request, response) {
     response.sendfile("static/" + request.params.staticFilename);
 });
 
+
 function initServer() {
   // When we start the server, we must load the stored data
-  var defaultList = "[]";
+  var defaultList = "";
   readFile("data.txt", defaultList, function(err, data) {
-    listings = JSON.parse(data);
+    if (data === ""){
+      journal = {};
+      journal["plan"] = [];
+    }
+    else
+      journal = JSON.parse(data);
   });
 }
 
