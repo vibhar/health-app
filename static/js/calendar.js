@@ -43,8 +43,6 @@ function makeCalendar(date){
 
     var startCol = date.getDay();
     var startRow = 1;
-    if (startCol === 0)
-        startRow = 2;
     
     var count = 1;
     var numDaysInMonth = getDaysInMonth(year, currMonthNum);
