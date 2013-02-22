@@ -3,20 +3,33 @@ $(document).ready(function(){
         $("#healthJournalScreen").css("display", "");
         $("#myPlanScreen").css("display", "none");
         $("#myProgressScreen").css("display", "none");
-    })
+    });
 
     $("#myPlanButton").click(function(){
         $("#healthJournalScreen").css("display", "none");
         $("#myPlanScreen").css("display", "");
         $("#myProgressScreen").css("display", "none");
-    })
+    });
     
     $("#myProgressButton").click(function(){
         $("#healthJournalScreen").css("display", "none");
         $("#myPlanScreen").css("display", "none");
         $("#myProgressScreen").css("display", "");
+        clearCalendar();
+        makeCalendar(calendarDate);
+    });
 
-        makeCalendar(new Date(2012,3,1));
-    })
+    $("#calPrevMonth").click(function(){
+        calendarDate.setMonth(calendarDate.getMonth()-1);
+        clearCalendar();
+        makeCalendar(calendarDate);
+    });
+
+    $("#calNextMonth").click(function(){
+        calendarDate.setMonth(calendarDate.getMonth()+1);
+        clearCalendar();
+        makeCalendar(calendarDate);
+
+    });
 
 });

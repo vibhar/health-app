@@ -1,3 +1,4 @@
+var calendarDate = new Date();
 function getMonthString(n){
     switch(n){
         case 0:
@@ -30,10 +31,8 @@ function getMonthString(n){
 function getDaysInMonth(year, month){
     return new Date(year, month+1, 0).getDate();
 }
-function makeCalendar(date){
-    var calendar = $("#calendar")
 
-    // var date = new Date();
+function makeCalendar(date){
 
     var currMonthNum = date.getMonth();
     var currMonth = getMonthString(currMonthNum);
@@ -49,10 +48,11 @@ function makeCalendar(date){
     
     var count = 1;
     var numDaysInMonth = getDaysInMonth(year, currMonthNum);
-    console.log(numDaysInMonth);
+    
     var currRow = startRow;
-    var currCol = startCol + 1;
-    console.log("Starting at: (" + currRow + "," + currCol + ")");
+    //need to account for zero indexing
+    var currCol = ((startCol+1)%7)+1;
+    
     while (count <= numDaysInMonth){
         var currCell = $("#cal_" + currRow + "_" + currCol);
         currCell.html(count);
@@ -64,4 +64,12 @@ function makeCalendar(date){
         }
     }
 
+}
+
+function clearCalendar(){
+    for (var row = 0; row < 7; row++){
+        for (var col = 0; col < 8; col++){
+            $("#cal_" + row + "_" + col).html("");
+        }
+    }
 }
