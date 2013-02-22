@@ -54,7 +54,7 @@ function makeCalendar(date){
     var currCol = ((startCol+1)%7)+1;
     
     while (count <= numDaysInMonth){
-        var currCell = $("#cal_" + currRow + "_" + currCol);
+        var currCell = $("#caldate_" + currRow + "_" + currCol);
         currCell.html(count);
         count++;
         currCol += 1;
@@ -69,7 +69,7 @@ function makeCalendar(date){
 function clearCalendar(){
     for (var row = 0; row < 7; row++){
         for (var col = 0; col < 8; col++){
-            $("#cal_" + row + "_" + col).html("");
+            $("#caldate_" + row + "_" + col).html("");
         }
     }
 }

@@ -1,7 +1,9 @@
 #calPrevMonth {
     background: url(../img/arrow-left.png) no-repeat;
+    background-position: center;
 }
 
 #calNextMonth {
     background: url(../img/arrow-right.png) no-repeat;
+    background-position: center;
 }
