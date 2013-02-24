@@ -1,4 +1,5 @@
 var calendarDate = new Date();
+calendarDate.setDate(1);
 function getMonthString(n){
     switch(n){
         case 0:
@@ -36,7 +37,7 @@ function makeCalendar(date){
 
     var currMonthNum = date.getMonth();
     var currMonth = getMonthString(currMonthNum);
-
+    console.log(currMonth);
     var year = date.getFullYear();
 
     $("#calendarMonth").html(currMonth + " " + year);
@@ -49,8 +50,8 @@ function makeCalendar(date){
     
     var currRow = startRow;
     //need to account for zero indexing
-    var currCol = ((startCol+1)%7)+1;
-    
+    var currCol = ((startCol+1)%7);
+    console.log(currCol);
     while (count <= numDaysInMonth){
         var currCell = $("#caldate_" + currRow + "_" + currCol);
         currCell.html(count);

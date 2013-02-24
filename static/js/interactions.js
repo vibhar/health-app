@@ -15,7 +15,7 @@ $(document).ready(function(){
         $("#healthJournalScreen").css("display", "none");
         $("#myPlanScreen").css("display", "none");
         $("#myProgressScreen").css("display", "");
-        clearCalendar();
+        // clearCalendar();
         makeCalendar(calendarDate);
     });
 
