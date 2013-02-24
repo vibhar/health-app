@@ -119,10 +119,23 @@ app.delete("/listings/:id", function(request, response){
 });
 
 
+function isSameDay(day1, day2){
+  return day1.getMonth() === day2.getMonth() &&
+         day1.getYear() === day2.getYear() &&
+         day1.getDate() === day2.getDate();
+}
 
 app.get("/plan", function(request, response){
+  var currDate = new Date();
+  var postDate = new Date(journal["plan"]["date"])
+  if (!isSameDay(currDate, postDate)){
+    console.log("got here");
+    journal["plan"]["items"] = [];
+    journal["plan"]["date"] = currDate;
+    writeFile("data.txt", JSON.stringify(journal));
+  }
   response.send({
-    plan: journal["plan"],
+    plan: journal["plan"]["items"],
     success: true
   });
 });
@@ -133,7 +146,7 @@ app.post("/plan", function(request, response){
   var successful = (task !== ""); 
 
   if (successful) {
-    journal["plan"].push(task);
+    journal["plan"]["items"].push(task);
     writeFile("data.txt", JSON.stringify(journal));
   } 
   else {
@@ -158,7 +171,9 @@ function initServer() {
   readFile("data.txt", defaultList, function(err, data) {
     if (data === ""){
       journal = {};
-      journal["plan"] = [];
+      journal["plan"] = {};
+      journal["plan"]["items"] = [];
+      journal["plan"]["date"] = new Date();
     }
     else
       journal = JSON.parse(data);

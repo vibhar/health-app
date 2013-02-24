@@ -1,5 +1,11 @@
 var plan = [];
 
+function isSameDay(day1, day2){
+  return day1.getMonth() === day2.getMonth() &&
+         day1.getYear() === day2.getYear() &&
+         day1.getDate() === day2.getDate();
+}
+
 function submitExercisePlanItem(){
         var length = $("#lengthExercise").val();
         var type = $("#typeExercise").val();
