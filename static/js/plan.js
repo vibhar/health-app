@@ -1,4 +1,4 @@
-var plan = [];
+var myPlan = [];
 
 function isSameDay(day1, day2){
   return day1.getMonth() === day2.getMonth() &&
@@ -21,9 +21,9 @@ function submitExercisePlanItem(){
 function refreshPlan(){
     $("#myExercisePlanList").html("");
 
-    for(var i=0; i < plan.length; i++){
+    for(var i=0; i < myPlan.length; i++){
         var newItem = $("<li>");
-        newItem.html(plan[i]);
+        newItem.html(myPlan[i]);
         $("#myExercisePlanList").append(newItem);
     }
 }
@@ -33,7 +33,7 @@ function getPlan() {
     type: "get",
     url: "/plan",
     success: function(data) {
-      plan = data.plan;
+      myPlan = data.plan;
       refreshPlan();
     }
   });
@@ -45,7 +45,7 @@ function addPlan(task) {
     data: {"task": task},
     url: "/plan",
     success: function(data) { 
-      plan.push(data['task']);
+      myPlan.push(data['task']);
       refreshPlan();
     }
   });
