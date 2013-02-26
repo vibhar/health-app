@@ -15,11 +15,12 @@
 			<ul>
 		</div>
 		<div class="data" id="healthJournalScreen">
-			<form id="journalentry">
-				<textarea>
-				</textarea>
+			<form action="javascript:submitJournalEntry()">
+				<textarea id="journalText"></textarea>
 				<input class="button" type="submit" value="Submit">
 			</form>
+			<ul id="journalExerciseList">
+			</ul>
 			This is where my journal will go
 		</div>
 		<div class="data" id="myPlanScreen" style="display: none">
@@ -116,5 +117,6 @@
 <script src="js/graph.js" type="text/javascript"></script>
 <script src="js/calendar.js" type="text/javascript"></script>
 <script src="js/plan.js" type="text/javascript"></script>
+<script src="js/journal.js" type="text/javascript"></script>
 </body>
 </html>

@@ -38,39 +38,39 @@ function writeFile(filename, data, callbackFn) {
   });
 }
 
-// get all items
-app.get("/journal", function(request, response){
-  response.send({
-    journal: journal,
-    success: true
-  });
-});
+// // get all items
+// app.get("/journal", function(request, response){
+//   response.send({
+//     journal: journal,
+//     success: true
+//   });
+// });
 
-// create new item
-app.post("/journal", function(request, response) {
-  console.log(request.body);
-  var entry = {"calories": request.body.calories,
-              "date": new Date(),
-              "target": Number(request.body.price),
-              "points": Number(request.body.points) };
+// // create new item
+// app.post("/journal", function(request, response) {
+//   console.log(request.body);
+//   var entry = {"calories": request.body.calories,
+//               "date": new Date(),
+//               "target": Number(request.body.price),
+//               "points": Number(request.body.points) };
 
-  var successful =
-      (entry.calories !== undefined) &&
-      (entry.target !== undefined) &&
-      (entry.points !== undefined);
+//   var successful =
+//       (entry.calories !== undefined) &&
+//       (entry.target !== undefined) &&
+//       (entry.points !== undefined);
 
-  if (successful) {
-    journal.push(entry);
-    writeFile("data.txt", JSON.stringify(journal));
-  } else {
-    entry = undefined;
-  }
+//   if (successful) {
+//     journal.push(entry);
+//     writeFile("data.txt", JSON.stringify(journal));
+//   } else {
+//     entry = undefined;
+//   }
 
-  response.send({
-    entry: entry,
-    success: successful
-  });
-});
+//   response.send({
+//     entry: entry,
+//     success: successful
+//   });
+// });
 
 // update one item
 // app.put("/listings/:id", function(request, response){
@@ -87,7 +87,7 @@ app.post("/journal", function(request, response) {
 //   item.price = (item.price !== undefined) ? item.price : oldItem.price;
 //   item.sold = (item.sold !== undefined) ? JSON.parse(item.sold) : oldItem.sold;
 // 
-//   // commit the update
+//   // commit the updates
 //   listings[id] = item;
 // 
 //   response.send({
@@ -140,6 +140,21 @@ app.get("/plan", function(request, response){
   });
 });
 
+app.get("/entry", function(request, response){
+  var currDate = new Date();
+  var postDate = new Date(journal["entries"]["date"]);
+  if (!isSameDay(currDate, postDate)){
+    console.log("got here");
+    journal["entries"]["list"] = {};
+    journal["entries"]["date"] = currDate;
+    writeFile("data.txt", JSON.stringify(journal));
+  }
+  response.send({
+    entries: journal["entries"]["list"],
+    success: true
+  });
+});
+
 app.post("/plan", function(request, response){
   var task = "" + request.body.task;
 
@@ -159,6 +174,29 @@ app.post("/plan", function(request, response){
   });
 });
 
+app.post("/entry", function(request, response){
+  var entry = "" + request.body.entry;
+  console.log("Serverside:" + entry);
+
+  var successful = (entry !== ""); 
+
+  if (successful) {
+    var date = new Date();
+    journal["entries"]["list"][date] = entry;
+    writeFile("data.txt", JSON.stringify(journal));
+  } 
+
+  else {
+    entry = undefined;
+  }
+
+  response.send({
+    entry: entry,
+    success: successful
+  });
+});
+
+
 // This is for serving files in the static directory
 app.get("/static/:staticFilename", function (request, response) {
     response.sendfile("static/" + request.params.staticFilename);
@@ -174,6 +212,9 @@ function initServer() {
       journal["plan"] = {};
       journal["plan"]["items"] = [];
       journal["plan"]["date"] = new Date();
+      journal["entries"] = {};
+      journal["entries"]["date"] = new Date();
+      journal["entries"]["list"] = {};
     }
     else
       journal = JSON.parse(data);
