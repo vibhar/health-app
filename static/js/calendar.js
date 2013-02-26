@@ -50,8 +50,8 @@ function makeCalendar(date){
     
     var currRow = startRow;
     //need to account for zero indexing
-    var currCol = ((startCol+1)%7);
-    console.log(currCol);
+    var currCol = ((startCol)%7)+1;
+    console.log("Starting at : " + currRow + " , " + currCol);
     while (count <= numDaysInMonth){
         var currCell = $("#caldate_" + currRow + "_" + currCol);
         currCell.html(count);
