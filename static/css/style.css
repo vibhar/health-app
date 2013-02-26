@@ -41,6 +41,9 @@ h1 {
 	width: 100%;
 	height: 33%;
     overflow-x: hidden;
+    overflow-y: hidden;
+    line-height: 150px;
+    font-weight: bold;
 }
 
 #sidebarList li:hover {
