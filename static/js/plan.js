@@ -7,15 +7,16 @@ function isSameDay(day1, day2){
 }
 
 function submitExercisePlanItem(){
-        var length = $("#lengthExercise").val();
-        var type = $("#typeExercise").val();
+    var description = $("#description").val();
+    var type = $('form input[type=radio]:checked').attr("id");
+    if (type === undefined){
+      return false;
+    }
+    
+    addPlan(type + " " + description);
+    $("#description").val("");
 
-        addPlan(length + " " + type
-            )
-        $("#lengthExercise").val("");
-        $("#typeExercise").val("");
-
-        return false;
+    return false;
 }
 
 function refreshPlan(){

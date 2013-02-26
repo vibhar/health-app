@@ -125,7 +125,7 @@ td div {
 
 table {
     border: 5px solid;
-    background-color: none;
+    background-color: white;
 
     position: relative;
     top: 10%;
@@ -150,8 +150,39 @@ table {
     color: #000;
     background-color: #FAF0E6;
     border-radius: 10px;
+    width: auto;
 }
 
 input {
     border: none;
+}
+
+#description {
+    height: 30px;
+    font-size: 20px;
+}
+
+#planForm {
+    font-size: 32;
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 25px;
+    height: 125px;
+}
+
+#typeSubForm {
+    position: absolute;
+    top: 0;
+    left: 10%;    
+}
+
+#descriptionSubForm {
+    position: absolute;
+    top: 0;
+    right: 10%
+}
+
+#planSubmit {
+    position: absolute;
+    bottom: 0;
 }

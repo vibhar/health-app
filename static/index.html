@@ -24,11 +24,19 @@
 			This is where my journal will go
 		</div>
 		<div class="data" id="myPlanScreen" style="display: none">
-			My Plan will go here eventually
-			<form action="javascript:submitExercisePlanItem()">
-				<input type="text" id="lengthExercise"/>
-				<input type="text" id="typeExercise"/>
-				<input class = "button" type="submit"/>
+			<div style="margin-top: 30px;margin-top:10px;margin-bottom:10px">Enter your plan for the day below!</div>
+			<form id="planForm" action="javascript:submitExercisePlanItem()">
+				<div id="typeSubForm">
+					What type of plan item is this?<br/>
+					<input type="radio" name="type" id="excercise"/> Excercise
+					<input type="radio" name="type" id="food"/> Food
+				</div>
+				<div id="descriptionSubForm">
+					Describe the item<br/>
+					<input type="text" id="description"/>
+					<br/>
+				</div>
+				<input class = "button" id="planSubmit" type="submit"/>
 			</form>
 			</form>
 			<ul id="myExercisePlanList">
