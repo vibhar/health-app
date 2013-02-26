@@ -15,8 +15,7 @@ $(document).ready(function(){
         $("#healthJournalScreen").css("display", "none");
         $("#myPlanScreen").css("display", "none");
         $("#myProgressScreen").css("display", "");
-        // clearCalendar();
-        makeCalendar(calendarDate);
+        
     });
 
     $("#calPrevMonth").click(function(){
@@ -30,6 +29,18 @@ $(document).ready(function(){
         clearCalendar();
         makeCalendar(calendarDate);
 
+    });
+
+    $("#graphButton").click(function(){
+        $("canvas").css("display", "");
+        $("#calendar").css("display", "none");
+        makeGraph();
+    });
+
+    $("#calendarButton").click(function(){
+        $("canvas").css("display", "none");
+        $("#calendar").css("display", "");
+        makeCalendar(calendarDate);
     });
 
 });
