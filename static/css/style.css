@@ -172,10 +172,9 @@ canvas {
 }
 
 #myExercisePlanList {
-    
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+    position: absolute;
+    right: 15%;
+    top: 15%;
     font-size: 24px;
     width: auto;
 }
@@ -204,27 +203,25 @@ input {
 
 #planForm {
     font-size: 32;
-    position: relative;
+    position: absolute;
     margin-bottom: 50px;
     margin-top: 25px;
     height: 125px;
+    left: 5%;
+    top: 10%;
 }
 
 #typeSubForm {
-    position: absolute;
-    top: 0;
-    left: 10%;    
+    margin-bottom: 25px;
+   
 }
 
 #descriptionSubForm {
-    position: absolute;
-    top: 0;
-    right: 10%
+    margin-bottom: 25px;
+    height: 50px;
 }
 
 #planSubmit {
-    position: absolute;
-    bottom: 0;
 }
 
 #calendarButton:hover{
