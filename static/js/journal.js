@@ -16,7 +16,7 @@ function submitJournalEntry(){
     exerciseArray.push(item, false);
   });
 
-  var entry = note + " " + weight + " " +  JSON.stringify(exerciseArray);
+  var entry = note + "%&" + weight + "%&" +  JSON.stringify(exerciseArray);
 
   console.log(entry);
 
@@ -24,9 +24,15 @@ function submitJournalEntry(){
   return false;
 }
 
+var topics = ['All','Cat1','Cat2'];
+
+
+
 function refreshJournal(){
     $("#journalExerciseList").html("");
     $("#journalText").html("")
+
+    var container = $("journalExerciseList");
 
     for(var i = 0; i < myPlan.length; i++){ 
         var newItem = $("<li>");
