@@ -5,7 +5,7 @@ body {
     letter-spacing: 0em;
     word-spacing: 0em;
     line-height: 1.4;
-	font-size: 48px;
+	font-size: 34px;
 }
 
 h1 {
@@ -137,8 +137,8 @@ textarea + .button {
 
 td {
     position: relative;
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
     border: 3px solid;
     font-size: 25px;
     text-align: center;
