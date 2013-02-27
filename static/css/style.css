@@ -1,6 +1,10 @@
 body {
 	background: url('../img/linen.png');
-	font-style: Lato;
+	font-family: 'Lato', sans-serif;
+  font-style: normal;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  line-height: 1.4;
 	font-size: 48px;
 }
 
@@ -8,8 +12,6 @@ h1 {
     color: #3BCDFF;
     text-align: center;
     text-decoration: underline;
-    margin-top: 15px;
-    padding-bottom: 10px;
     font-weight: bold;
 }
 .transbox {
