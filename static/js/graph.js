@@ -1,28 +1,39 @@
 function makeGraph(){
+    console.log(entries);
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
     var width = canvas.width;
     var height = canvas.height;
+
+    ctx.clearRect ( 0 , 0 , width , height );
     var points = []
 
-    var d8 = new Date("February 16, 2013");
-    var d7 = new Date("February 15, 2013");
-    var d6 = new Date("February 14, 2013");
-    var d5 = new Date("February 13, 2013");
-    var d4 = new Date("February 12, 2013");
-    var d3 = new Date("February 11, 2013");
-    var d2 = new Date("February 10, 2013");
-    var d1 = new Date("February 9, 2013");
 
-    points.push([d1,100]);
-    points.push([d2,90]);
-    points.push([d3,120]);
-    points.push([d4,110]);
-    points.push([d5,150]);
-    points.push([d6,110]);
-    points.push([d7,100]);
-    points.push([d8,130]);
+    dates = [];
+    for (var key in entries){
+        dates.push(new Date(key));
+    }
+ 
+    var date_sort_desc = function (date1, date2) {
+      if (date1 > date2) return 1;
+      if (date1 < date2) return -1;
+      return 0;
+    };
+ 
+    dates.sort(date_sort_desc);
+    console.log(dates);
+
+    var numPoints = Math.min(dates.length, 7);
+    for (var i = 0; i < numPoints; i++){
+        var tmp = entries[dates[dates.length-i-1]];
+        if (tmp !== undefined){
+            var weight = tmp.split("%&")[1]
+            console.log("weight: " + weight);
+            points.push([dates[dates.length-i-1], weight]);
+        }
+    }
+    console.log(points);
 
     //draw frame of axis
     ctx.beginPath();
@@ -52,15 +63,18 @@ function makeGraph(){
     var graphWidth = bottomRightGraph[0] - bottomLeftGraph[0];
     var graphHeight = bottomLeftGraph[1] - topLeftGraph[1];
 
-    var numDisplayPoints = 7;
-
-    var count = numDisplayPoints;
+    var numDisplayPoints = points.length;
+    console.log("sadgjkdsgk: " + points.length);
+    
+    var count = -1;
+    if (numPoints > 0)
+        count = numDisplayPoints-1;
 
     //draw the points on the graph
-    while (count > 0) {
+    while (count >= 0) {
         var point = points[points.length-1-count];
             
-        var x = bottomLeftGraph[0] + 10 + (count-1)/numDisplayPoints * (graphWidth-10);
+        var x = bottomLeftGraph[0] + 10 + (count)/numDisplayPoints * (graphWidth-10);
         var y = bottomLeftGraph[1] - (point[1]-minWeight)/(maxWeight- minWeight) * (graphHeight-10);
         console.log(y);
         graphPoints.push([x,y]);
@@ -76,17 +90,16 @@ function makeGraph(){
         circle(ctx, graphPoints[i][0], graphPoints[i][1], 5);
         ctx.fill();
     }
-
-    ctx.beginPath();
-    ctx.moveTo(graphPoints[0][0], graphPoints[0][1]);
-    for (var i = 1; i < graphPoints.length; i++){
-        ctx.lineTo(graphPoints[i][0], graphPoints[i][1]);
+    if (numPoints > 0){
+        ctx.beginPath();
+        ctx.moveTo(graphPoints[0][0], graphPoints[0][1]);
+        for (var i = 1; i < graphPoints.length; i++){
+            ctx.lineTo(graphPoints[i][0], graphPoints[i][1]);
+        }
+        ctx.stroke();
     }
-    ctx.stroke();
-
 
     var numAxisDashes = 6;
-
 
     //y axis
     for (var i=1; i < numAxisDashes; i++){
@@ -99,14 +112,14 @@ function makeGraph(){
     }
 
     //x axis
-    numAxisDashes = 8
-    for (var i=1; i < numAxisDashes; i++){
+    numAxisDashes = points.length;
+    for (var i=0; i < numAxisDashes; i++){
         ctx.beginPath();
-        ctx.moveTo(bottomLeftGraph[0] + 10 + (i-1)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1]);
-        ctx.lineTo(bottomLeftGraph[0] + 10 + (i-1)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1] + 10);
+        ctx.moveTo(bottomLeftGraph[0] + 10 + (i)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1]);
+        ctx.lineTo(bottomLeftGraph[0] + 10 + (i)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1] + 10);
         ctx.stroke();
 
-        ctx.fillText("" + (points[i][0].getMonth() + 1) + "/" +  points[i][0].getDate(), bottomLeftGraph[0] + 5 + (i-1)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1] + 20);
+        ctx.fillText("" + (points[i][0].getMonth() + 1) + "/" +  points[i][0].getDate(), bottomLeftGraph[0] + 5 + (i)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1] + 20);
 
     }
 

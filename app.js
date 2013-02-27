@@ -189,7 +189,6 @@ app.post("/entry", function(request, response){
   else {
     entry = undefined;
   }
-
   response.send({
     entry: entry,
     success: successful

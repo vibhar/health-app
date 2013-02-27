@@ -43,4 +43,6 @@ $(document).ready(function(){
         makeCalendar(calendarDate);
     });
 
+     makeCalendar(calendarDate);
+
 });

@@ -24,7 +24,8 @@ function refreshPlan(){
 
     for(var i=0; i < myPlan.length; i++){
         var newItem = $("<li>");
-        newItem.html(myPlan[i]);
+        newItem.html(myPlan[i].substr(myPlan[i].indexOf(' ')+1));
+        newItem.addClass(myPlan[i].substr(0,myPlan[i].indexOf(' ')))
         $("#myExercisePlanList").append(newItem);
     }
 }
