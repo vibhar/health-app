@@ -47,6 +47,7 @@ function addPlan(task) {
     url: "/plan",
     success: function(data) { 
       myPlan.push(data['task']);
+      refreshJournal();
       refreshPlan();
     }
   });

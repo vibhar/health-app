@@ -68,6 +68,21 @@ h1 {
     position: absolute;
 }
 
+#weightForm {
+    position: absolute;
+    top: 5%;
+    left: 17%;
+}
+
+#weight {
+    top: 5%;
+    left: 29%;
+    font-size: 20px;
+    background: #FFF;
+    height: 38px;
+    width: 60px;
+}
+
 .button {
     font-size: 20px;
     color: #FFF;
@@ -76,15 +91,18 @@ h1 {
     height: 45px;
     width: 80px;
 }
+
 textarea + .button {
 	font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
 	color: #FFF;
 	background-color: #759FB8;
 	position: absolute;
 	height: 45px;
 	width: 80px;
 	bottom: 3%;
- 	left: 22%;
+ 	left: 27%;
 	vertical-align: 10px;
 	border: none;
 }
@@ -96,14 +114,25 @@ textarea + .button {
 .data textarea {
     background: url(../img/notebook.png) repeat-y;
     position: absolute;
-    top: 15%;
+    top: 18%;
     left: 5%;
-    width: 25%;
-    height: 70%;
-    font: normal 14px lato;
+    width: 30%;
+    height: 65%;
+    font-family: 'Lato', sans-serif;
+    font: normal;
+    font-size: 15px;
     line-height: 25px;
     border-color: #CCF2FF;
     color: black;
+    resize: none;
+}
+
+#myExercisePlanList {
+
+}
+
+#healthJournalScreen {
+    font-size: 30px;
 }
 
 td {

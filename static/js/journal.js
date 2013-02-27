@@ -2,7 +2,7 @@ var entries = {};
 
 function submitJournalEntry(){
   var note = $("#journalText").val();
-  var calories = $("#calories");
+  var weight = $("#weight").val();
 
   var exerciseArray = [];
 
@@ -16,7 +16,7 @@ function submitJournalEntry(){
     exerciseArray.push(item, false);
   });
 
-  var entry = note + " " +  calories + " " +  JSON.stringify(exerciseArray);
+  var entry = note + " " + weight + " " +  JSON.stringify(exerciseArray);
 
   console.log(entry);
 
@@ -57,6 +57,7 @@ function addJournal(entry) {
       var date = new Date();
       entries[date] = data[entry];
       refreshJournal();
+      refreshPlan();
     }
   });
 }
