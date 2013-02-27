@@ -1,0 +1,1 @@
+{"plan":{"items":["excercise wat","excercise Ermasdf"],"date":"2013-02-27T23:18:44.032Z"},"entries":{"date":"2013-02-27T23:18:44.032Z","list":{}}}

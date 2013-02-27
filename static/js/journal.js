@@ -24,10 +24,6 @@ function submitJournalEntry(){
   return false;
 }
 
-var topics = ['All','Cat1','Cat2'];
-
-
-
 function refreshJournal(){
     $("#journalExerciseList").html("");
     $("#journalText").html("")
@@ -35,9 +31,11 @@ function refreshJournal(){
     var container = $("journalExerciseList");
 
     for(var i = 0; i < myPlan.length; i++){ 
-        var newItem = $("<li>");
-        newItem.html(myPlan[i]);
+        var num = "" + i;
+        console.log(myPlan[i]);
+        var newItem = $('<input type ="checkbox" name ="plan"' + num + " value=" + myPlan[i] + "<br>");
         $("#journalExerciseList").append(newItem);
+        num = ""
     }
 }
 
