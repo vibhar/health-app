@@ -3,6 +3,7 @@
    <link href="css/reset.css" rel="stylesheet" type="text/css">
    <link href="css/style.css" rel="stylesheet" type="text/css">
    <link href="css/icons.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
  </head>
 <body>
   <h1><img src="img/iworkoutlogo.png" alt="iWorkout" width="400" height="100"></h1>
@@ -14,7 +15,7 @@
 				<li id="myProgressButton">Progress</li>
 			<ul>
 		</div>
-		<div class="data" id="myPlanScreen" style="display: none">
+		<div class="data" id="myPlanScreen">
 			<div style="margin-top: 30px;margin-top:10px;margin-bottom:10px">Enter your plan for the day below!</div>
 			<form id="planForm" action="javascript:submitExercisePlanItem()">
 				<div id="typeSubForm">
@@ -33,7 +34,7 @@
 			<ul id="myExercisePlanList">
 			</ul>
 		</div>
-		<div class="data" id="healthJournalScreen">
+		<div class="data" id="healthJournalScreen" style="display: none">
 			<form action="javascript:submitJournalEntry()">
 				<textarea id="journalText"></textarea>
 				<input class="button" type="submit" value="Submit">
@@ -45,9 +46,10 @@
 			<div style="margin-top: 30px;margin-top:10px;margin-bottom:10px">
 				See what you have accomplished so far!
 			</div>
-			<button id="calendarButton">Calendar View</button>
-			<button id="graphButton">Graph View</button>
-			<br/>
+			<div id="progressViewButtons">
+				<button id="calendarButton">Calendar View</button>
+				<button id="graphButton">Graph View</button>
+			</div>
             <!-- All the fun graphs calendars and fun stuff will go here eventually -->
             <canvas id="myCanvas" width="600" height="400"
 		        style="display:none;border:1px solid #000000;position:relative;">
