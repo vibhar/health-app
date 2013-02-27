@@ -61,9 +61,10 @@ function addJournal(entry) {
     url: "/entry",
     success: function(data) { 
       var date = new Date();
-      entries[date] = data[entry];
+      entries[date] = data["entry"];
       refreshJournal();
       refreshPlan();
+      makeGraph();
     }
   });
 }

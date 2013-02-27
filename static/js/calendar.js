@@ -55,6 +55,7 @@ function makeCalendar(date){
     while (count <= numDaysInMonth){
         var currCell = $("#caldate_" + currRow + "_" + currCol);
         currCell.html(count);
+        // var currCell = $("#cal_" + currRow + "_" + currCol).append("4/5");
         count++;
         currCol += 1;
         if (currCol==8){

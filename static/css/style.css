@@ -26,6 +26,14 @@ h1 {
 
 }
 
+.exercise {
+    background-color: #93D1FF;
+}
+
+.food{
+    background-color: #759FB8;
+}
+
 .sidebar {
 	position: relative;
 	color: #3ABDFF;
@@ -185,11 +193,10 @@ canvas {
     text-align: left;
     padding-left: 5%;
     color: #000;
-    background-color: #FAF0E6;
     border-radius: 10px;
-    width: auto;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 100%;
 }
 
 input {
@@ -224,18 +231,10 @@ input {
 #planSubmit {
 }
 
-#calendarButton:hover{
-    background-color: white;
-}
-
-#graphButton:hover {
-    background-color: white;
-}
-
 #calendarButton {
     height: auto;
     width: auto;
-    font-size: 32;
+    padding: 10px;
     display: block;
     margin-bottom: 50px;
 }
@@ -243,7 +242,7 @@ input {
 #graphButton {
     height: auto;
     width: auto;
-    font-size: 32;
+    padding: 10px;
     display: block;
 }
 
@@ -254,4 +253,12 @@ input {
 }
 button {
     border: 3px solid black;
+}
+
+#exerciseRadio{
+    color: #93D1FF;
+}
+
+#foodRadio{
+    color:#759FB8;
 }
