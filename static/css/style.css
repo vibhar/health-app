@@ -1,10 +1,10 @@
 body {
 	background: url('../img/linen.png');
 	font-family: 'Lato', sans-serif;
-  font-style: normal;
-  letter-spacing: 0em;
-  word-spacing: 0em;
-  line-height: 1.4;
+    font-style: normal;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    line-height: 1.4;
 	font-size: 48px;
 }
 
@@ -58,14 +58,14 @@ h1 {
 }
 
 .data {
-  position: relative;
-  /*border: 1px solid #759FB8;*/
-  color: #759FB8;
-  top:0%;
-  left:25%;
-  width: 75%;
-  height: 100%;
-  position: absolute;
+    position: relative;
+    /*border: 1px solid #759FB8;*/
+    color: #759FB8;
+    top:0%;
+    left:25%;
+    width: 75%;
+    height: 100%;
+    position: absolute;
 }
 
 .button {
@@ -94,16 +94,16 @@ textarea + .button {
 }
 
 .data textarea {
- background: url(../img/notebook.png) repeat-y;
- position: absolute;
- top: 15%;
- left: 5%;
- width: 25%;
- height: 70%;
- font: normal 14px lato;
- line-height: 25px;
- border-color: #CCF2FF;
- color: black;
+    background: url(../img/notebook.png) repeat-y;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 25%;
+    height: 70%;
+    font: normal 14px lato;
+    line-height: 25px;
+    border-color: #CCF2FF;
+    color: black;
 }
 
 td {
@@ -128,7 +128,6 @@ td div {
 table {
     border: 5px solid;
     background-color: white;
-
     position: relative;
     display: inline-block;
     margin-top: 50px;
@@ -146,7 +145,6 @@ canvas {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5%;
-    
     font-size: 24px;
     width: auto;
 }
@@ -222,5 +220,4 @@ input {
 
 button {
     border: 3px solid black;
-
 }

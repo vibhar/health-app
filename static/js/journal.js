@@ -1,5 +1,4 @@
 var entries = {};
-var plan = [];
 
 function submitJournalEntry(){
   var note = $("#journalText").val();
@@ -29,13 +28,11 @@ function refreshJournal(){
     $("#journalExerciseList").html("");
     $("#journalText").html("")
 
-    for(var key in entries){ 
+    for(var i = 0; i < myPlan.length; i++){ 
         var newItem = $("<li>");
-        newItem.html(entries[key]);
+        newItem.html(myPlan[i]);
         $("#journalExerciseList").append(newItem);
     }
-
-    $("#journalExerciseList").append(entries);
 }
 
 function getJournal() {
@@ -44,12 +41,11 @@ function getJournal() {
     url: "/entry",
     success: function(data) {
       entries = data.entries;
-      plan = data.plan;
       refreshJournal();
     }
   });
-  console.log(JSON.stringify(plan));
-  console.log(JSON.stringify(entries));
+  console.log("plan: " + JSON.stringify(myPlan));
+  console.log("entries: " + JSON.stringify(entries));
 }
 
 function addJournal(entry) {
