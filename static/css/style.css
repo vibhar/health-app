@@ -101,7 +101,7 @@ textarea + .button {
  font: normal 14px lato;
  line-height: 25px;
  border-color: #CCF2FF;
- color: #CCF2FF;
+ color: black;
 }
 
 td {
@@ -128,8 +128,15 @@ table {
     background-color: white;
 
     position: relative;
-    top: 10%;
-    left: 5%;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+canvas {
+    display: inline-block;
+    position: relative;
+    margin-top: 50px;
+    background-color: white;
 }
 
 #myExercisePlanList {
@@ -201,10 +208,17 @@ input {
     height: auto;
     width: auto;
     font-size: 32;
+    padding: 10px;
 }
 
 #graphButton {
     height: auto;
     width: auto;
     font-size: 32;
+    padding: 10px;
+}
+
+button {
+    border: 3px solid black;
+
 }

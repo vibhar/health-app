@@ -32,6 +32,14 @@ function makeGraph(){
     ctx.lineWidth = 3;
     ctx.stroke();
 
+    console.log("foobar")
+    ctx.save();
+    ctx.font = '20px Calibri';
+    ctx.translate(1/30 * width, 4/6*height);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText("Weight (lbs)",0,0);
+    ctx.restore();
+
     var minWeight = 80;
     var maxWeight = 200;
 
@@ -101,4 +109,6 @@ function makeGraph(){
         ctx.fillText("" + (points[i][0].getMonth() + 1) + "/" +  points[i][0].getDate(), bottomLeftGraph[0] + 5 + (i-1)/numDisplayPoints * (graphWidth-10), bottomLeftGraph[1] + 20);
 
     }
+
+    
 }
