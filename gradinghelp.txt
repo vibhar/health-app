@@ -1,0 +1,43 @@
+Sean Donegan - spdonega
+Vibha Rao - vibhar
+
+Javascript 
+    use date objects frequently see plan.js for use
+    we create our own objects for data.txt
+Canvas
+    graph - implementation graph.js
+            to see go to progress tab
+HTML 
+    table - calendar see progress tab
+    forms - see both plan and journal tabs
+CSS 
+    reset - we used one see reset.css
+    pseudo - hover used for tabs, buttons
+DOM manipulation
+    see plan, when add an item list gets manipulated
+jQuery
+    its EVERYWHERE
+AJAX client
+    see plan.js and journal.js for ajax functions
+AJAX server 
+    see app.js
+
+
+User Testing
+Some of the key points we listened to were
+1. We made the plan the default screen instead of journal
+2. In plan screen we pulled the entire form together to ensure
+   that the two components type and description intuitively go together
+   and both are required
+3. Add some color and more styling to the list in plan along with background 
+   color associated with type
+4. We made our title more aesthetically appealing. 
+5. We added the planning items to the journal page so that the user would not 
+   have to retype them. 
+
+
+Design Process
+We first came up with the idea of the health journal and then started coming
+up with functionality that we wanted to have. From this we tried to tailor
+the design to the functionality. As we change the functionality the design 
+generally changed.

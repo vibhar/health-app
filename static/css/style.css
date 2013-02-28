@@ -267,3 +267,13 @@ button {
 #foodRadio{
     color: #759FB8;
 }
+
+#popup{
+    background-color: white;
+    width:auto;
+    height: auto;
+    padding: 15px;
+    margin: 5px;
+    border: 1px solid black;
+    z-index: 1;
+}
