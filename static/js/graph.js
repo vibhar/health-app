@@ -1,5 +1,5 @@
 function makeGraph(){
-    console.log(entries);
+
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
@@ -22,18 +22,15 @@ function makeGraph(){
     };
  
     dates.sort(date_sort_desc);
-    console.log(dates);
 
     var numPoints = Math.min(dates.length, 7);
     for (var i = 0; i < numPoints; i++){
         var tmp = entries[dates[dates.length-i-1]];
         if (tmp !== undefined){
             var weight = tmp.split("%&")[1]
-            console.log("weight: " + weight);
             points.push([dates[dates.length-i-1], weight]);
         }
     }
-    console.log(points);
 
     //draw frame of axis
     ctx.beginPath();
@@ -43,7 +40,6 @@ function makeGraph(){
     ctx.lineWidth = 3;
     ctx.stroke();
 
-    console.log("foobar")
     ctx.save();
     ctx.font = '20px Calibri';
     ctx.translate(1/30 * width, 4/6*height);
@@ -64,7 +60,6 @@ function makeGraph(){
     var graphHeight = bottomLeftGraph[1] - topLeftGraph[1];
 
     var numDisplayPoints = points.length;
-    console.log("sadgjkdsgk: " + points.length);
     
     var count = -1;
     if (numPoints > 0)
@@ -76,7 +71,6 @@ function makeGraph(){
             
         var x = bottomLeftGraph[0] + 10 + (count)/numDisplayPoints * (graphWidth-10);
         var y = bottomLeftGraph[1] - (point[1]-minWeight)/(maxWeight- minWeight) * (graphHeight-10);
-        console.log(y);
         graphPoints.push([x,y]);
         count -= 1;
     }

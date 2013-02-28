@@ -44,19 +44,54 @@ $(document).ready(function(){
     });
 
     $(".cal").hover(function(){
-        // $(this).append("<div id='popup'>nksegeglsnk</div>");
+        
         var id = $(this).attr('id');
         var foo = id.split("_");
-        var row = foo[1];
-        var col = foo[2];
+        var row = parseInt(foo[1]);
+        var col = parseInt(foo[2]);
         var startCol = calendarDate.getDay();
-        console.log(startCol);
-        console.log(row);
-        if ((row === "1") && (parseInt(col) < startCol+1)){
+
+        if ((row === 1) && (col < startCol+1)){
             return;
         }
-        console.log(foo);
-        // console.log(calendarDate);
+        
+        var count = 0;
+        var notHit = true;
+
+        currCol = startCol+1;
+        currRow = 1
+        while (notHit){
+            if ((currCol===col) && (currRow===row)){
+                notHit=false;
+            }
+            currCol += 1;
+            if (currCol===8){
+                currCol = 1;
+                currRow += 1;
+            }
+            count += 1;
+        }
+        var date = count;
+
+        var hoverDate = new Date(calendarDate.getYear() + 1900, 
+                                 calendarDate.getMonth(),
+                                 date);
+        for (var key in entries){
+            var val = entries[key].split("%&");
+            var stuff = JSON.parse(val[val.length-1]);
+
+            if (isSameDay(hoverDate, new Date(key))){
+                var displayStr = "";
+                for (item in stuff){
+                    displayStr += stuff[item] + "<br/>";
+                }
+                $(this).append("<div id='popup'>" + displayStr + "</div>");
+                return;
+            }
+        }
+        if (hoverDate.getMonth() === calendarDate.getMonth())
+            $(this).append("<div id='popup'>No data for this day</div>");
+        
     },
     function () {
     $(this).find("#popup").remove();

@@ -37,7 +37,6 @@ function makeCalendar(date){
 
     var currMonthNum = date.getMonth();
     var currMonth = getMonthString(currMonthNum);
-    console.log(currMonth);
     var year = date.getFullYear();
 
     $("#calendarMonth").html(currMonth + " " + year);
@@ -50,7 +49,7 @@ function makeCalendar(date){
     
     var currRow = startRow;
     var currCol = ((startCol)%7)+1;
-    console.log("Starting at : " + currRow + " , " + currCol);
+    
     while (count <= numDaysInMonth){
         var currCell = $("#caldate_" + currRow + "_" + currCol);
         currCell.html(count);

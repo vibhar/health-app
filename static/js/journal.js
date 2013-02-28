@@ -14,8 +14,6 @@ function submitJournalEntry(){
   // We know they're crappy delimiters; please don't break our app. 
   var entry = note + "%&" + weight + "%&" +  JSON.stringify(exerciseArray);
 
-  console.log(entry);
-
   addJournal(entry);
   return false;
 }
@@ -36,7 +34,6 @@ function refreshJournal(){
 
     for(var i = 0; i < myPlan.length; i++){ 
         var num = "" + i;
-        console.log(myPlan[i]);
         var container = $('<input type ="checkbox" name ="plan"' + num + " value=" + JSON.stringify(myPlan[i]) + ">");
         $("#journalExerciseList").append(container).append(myPlan[i]).append("<br>");
         num = "";
@@ -52,9 +49,6 @@ function getJournal() {
       refreshJournal();
     }
   });
-
-  console.log("plan: " + JSON.stringify(myPlan));
-  console.log("entries: " + JSON.stringify(entries));
 }
 
 function addJournal(entry) {
