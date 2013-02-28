@@ -49,13 +49,11 @@ function makeCalendar(date){
     var numDaysInMonth = getDaysInMonth(year, currMonthNum);
     
     var currRow = startRow;
-    //need to account for zero indexing
     var currCol = ((startCol)%7)+1;
     console.log("Starting at : " + currRow + " , " + currCol);
     while (count <= numDaysInMonth){
         var currCell = $("#caldate_" + currRow + "_" + currCol);
         currCell.html(count);
-        // var currCell = $("#cal_" + currRow + "_" + currCol).append("4/5");
         count++;
         currCol += 1;
         if (currCol==8){

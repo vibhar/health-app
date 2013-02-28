@@ -7,10 +7,11 @@ function submitJournalEntry(){
   var exerciseArray = [];
 
   $("#journalExerciseList input:checkbox:checked").each(function() {
-    var item = $(this).val() // do your staff with each checkbox
+    var item = $(this).val();
     exerciseArray.push(item);
   });
 
+  // We know they're crappy delimiters; please don't break our app. 
   var entry = note + "%&" + weight + "%&" +  JSON.stringify(exerciseArray);
 
   console.log(entry);
@@ -62,6 +63,8 @@ function addJournal(entry) {
     data: {"entry": entry},
     url: "/entry",
     success: function(data) { 
+      // Rewrites journal entries made on the same day, but
+      // otherwise will create a new journal entry. 
       var date = new Date();
       var day = date.getDate();
       var month = date.getMonth();
