@@ -153,10 +153,6 @@ textarea + .button {
     resize: none;
 }
 
-#myExercisePlanList {
-
-}
-
 #healthJournalScreen {
     font-size: 30px;
 }
@@ -244,9 +240,6 @@ input {
 #descriptionSubForm {
     margin-bottom: 25px;
     height: 50px;
-}
-
-#planSubmit {
 }
 
 #calendarButton {

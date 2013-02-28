@@ -8,12 +8,7 @@ function submitJournalEntry(){
 
   $("#journalExerciseList input:checkbox:checked").each(function() {
     var item = $(this).val() // do your staff with each checkbox
-    exerciseArray.push(item, true);
-  });
-
-  $("#journalExerciseList input:checkbox:not(:checked)").each(function() {
-    var item = $(this).val() // do your staff with each checkbox
-    exerciseArray.push(item, false);
+    exerciseArray.push(item);
   });
 
   var entry = note + "%&" + weight + "%&" +  JSON.stringify(exerciseArray);
