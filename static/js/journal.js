@@ -6,12 +6,12 @@ function submitJournalEntry(){
 
   var exerciseArray = [];
 
-  $("#exerciseForm input:checkbox:checked").each(function() {
+  $("#journalExerciseList input:checkbox:checked").each(function() {
     var item = $(this).val() // do your staff with each checkbox
     exerciseArray.push(item, true);
   });
 
- $("#exerciseForm input:checkbox:not(:checked)").each(function() {
+ $("#journalExerciseList input:checkbox:not(:checked)").each(function() {
     var item = $(this).val() // do your staff with each checkbox
     exerciseArray.push(item, false);
   });
@@ -20,7 +20,7 @@ function submitJournalEntry(){
 
   console.log(entry);
 
-  addJournal(entry)
+  addJournal(entry);
   return false;
 }
 
@@ -28,14 +28,12 @@ function refreshJournal(){
     $("#journalExerciseList").html("");
     $("#journalText").html("")
 
-    var container = $("journalExerciseList");
-
     for(var i = 0; i < myPlan.length; i++){ 
         var num = "" + i;
         console.log(myPlan[i]);
-        var newItem = $('<input type ="checkbox" name ="plan"' + num + " value=" + myPlan[i] + "<br>");
-        $("#journalExerciseList").append(newItem);
-        num = ""
+        var container = $('<input type ="checkbox" name ="plan"' + num + " value=" + JSON.stringify(myPlan[i]) + ">");
+        $("#journalExerciseList").append(container).append(myPlan[i]).append("<br>");
+        num = "";
     }
 }
 
@@ -70,4 +68,3 @@ function addJournal(entry) {
 $(document).ready(function(){
     getJournal();
 });
-

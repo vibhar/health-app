@@ -24,7 +24,6 @@ h1 {
 	right:3%;
     border-radius: 15px;
     text-align: center;
-
 }
 
 .exercise {
@@ -68,7 +67,6 @@ h1 {
 
 .data {
     position: relative;
-    /*border: 1px solid #759FB8;*/
     color: #759FB8;
     top:0%;
     left:25%;
@@ -81,6 +79,12 @@ h1 {
     position: absolute;
     top: 5%;
     left: 17%;
+}
+
+#journalExerciseList {
+    position: absolute;
+    left: 45%;
+    font-size:20px;
 }
 
 #weight {
@@ -261,5 +265,5 @@ button {
 }
 
 #foodRadio{
-    color:#759FB8;
+    color: #759FB8;
 }
